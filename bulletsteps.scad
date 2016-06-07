@@ -7,22 +7,22 @@ width = 37.5; // y
 start_x = 3.5;
 start_y = 3.75;
 x_gap = 7;
-y_gap = 7.5;
-step = 1.6;
-base_height = 3.5;
+y_gap = 7.4;
+step = 3;
+base_height = 4;
 diameter = 5;
 
 difference() {
     union() {
-        for(x = [0:9]) {
+        for(y = [0:4]) {
             difference(){
-                translate([x * x_gap, 0, 0])
-                    cube([x_gap, width, x * step + base_height]);
-                start_x = start_x + (x * x_gap);
-                for(y = [0:4]) {
-                    start_y = start_y + (y * y_gap);
+                translate([0, y * y_gap, 0])
+                    cube([length, y_gap, y * step + base_height]);
+                start_y = start_y + (y * y_gap);
+                for(x = [0:9]) {
+                    start_x = start_x + (x * x_gap);
                     translate([start_x, start_y, -0.5])
-                        cylinder(x * step + base_height + 1, d = diameter);
+                        cylinder(y * step + base_height + 1, d = diameter);
                 }
             }
         }
