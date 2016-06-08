@@ -7,10 +7,10 @@ width = 37.5; // y
 start_x = 3.5;
 start_y = 3.75;
 x_gap = 7;
-y_gap = 7.4;
+y_gap = 7.5;
 step = 3;
-base_height = 4;
-diameter = 5;
+base_height = 4.5;
+diameter = 4.5;
 
 difference() {
     union() {
